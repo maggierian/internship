@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>LIMMA</title>
+        <link rel="stylesheet" type="text/css" href= "{{url_for('static', filename='css/styles.css')}}"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+<link rel= "stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src ="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+</script>
+<script>
+    $(document).ready( function () {
+        $('#myTable1').DataTable();
+    } );
+</script>
+        {% block css %} {% endblock %}
+    </head>
+    <body>
+        <div style="background-color:white; width:100%; height:1000px;" >
+            <div class= "topnav"; style="display: inline-flex;background-color:#04212a; width:100%; height:6%;">
+                <div style= "width: 30%;" >
+                    <h1> <a  href= "/" style= "color:white; display :inline-block; height:80%;"> LIMMA</a></h1>
+                </div> 
+                <div style= "width: 70%; margin-left: 30%;" >
+                    <a> <h4>{{crop["crop_name"]}}</h4> </a>
+                </div> 
+            </div>
+            <div class="middle_body"; style=" width:100%; height:85%; display: -webkit-box;">
+                <div class="leftnav"; style=" background-color:rgba(25, 43, 61, 0.95); width:20%; height:100%; display:block"> 
+                    <div style= "width:15%; margin-left:40px; margin-top:10px; ">
+                        <a class="active" href="/pests/{{crop['id']}}" style=" color:white; height:80%"> <h5> Pests</h5> </a> 
+                    </div> 
+                    <div style= "width:15%; margin-left:40px; ">
+                        <a class="active" href="/diseases/{{crop['id']}}" style=" color:white; height:80%; "> <h5> diseases</h5> </a> 
+                    </div> 
+                    <div style= "width:15%; margin-left:40px;">
+                        <a class="active" href="#Crops" style=   "height:80%; color:white; "> <h5> Item3</h5> </a> 
+                    </div> 
+                </div>
+                <div class="right side"; style=" width:80%; height:100%;position: inherit;background-color:white;">
+                    <!--extra pages/content-->
+                    {% block content %} {% endblock %}
+                    
+                </div>
+
+            </div>
+            <div id="footer" style=" width:100%; height:auto; background-color:#0f1d22; display:inline-block; " >
+                <div style=" width:20%; height:200px; border-radius:5px;margin:10px 20px 10px 60px; float:left">
+                        <img src="/static/images/lim.png" alt="Image" width="100%" height="200px;">
+                </div>  
+                <div  style=" width:20%; height:200px; color:black; float:left;border-radius:5px;margin:10px 20px 10px 10px; ">
+                    <h3> FOLLOW US</h3>
+                    <!-- Add icon library -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+                    <!-- Add font awesome icons -->
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                        
+                </div>
+                <div style=" width:20%; height:200px;color:black; float:left; border-radius:5px;margin:10px 20px 10px 10px;">
+                    <h5> Contact-us:</h5> 
+                    <p>LimmaInfo.org</p>
+                    <p>+33752252283</p>
+                </div>
+                <div class="lastfooter" style=" width:20%; height:200px;color:black; float:left; border-radius:5px;margin:10px 20px 10px 10px; ">
+                    <ul>
+                        <li><a href="#home" class="home">Home</a></li>
+                        <li><a href="#about_us" class="About-Us"> About-Us</a></li>
+                        <li> <a href="#contact_us" class="contact-Us">Contact-Us</a></li>
+                        <li><a href="#crops" class="crops">Crops</a></li>
+                </ul>
+                </div>  
+                
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>     
+{% block js %} {% endblock %}
+    </body>
+</html>

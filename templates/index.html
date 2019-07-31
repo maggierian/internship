@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LIMMA </title>
+    <link rel="stylesheet" type="text/css" href= "{{url_for('static', filename='css/styles.css')}}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+</head>
+<body>
+    <div style="background-color:#f8eaf6; width:100%; height:100%" >
+        <div class= "topnav"; style=" background-color:#04212a; width:100%;text-decoration: none; max-height:100px;">
+            <!-- <div style= "display:inline-block; width:15%;  ">
+               
+            </div>   -->
+            <div class= "img">
+                <a> <img src="/static/images/lim.png" alt="Image" width="100px;" > </a>
+            </div>  
+            <div style= "display:inline-block;width:15%; " >
+                <a class="active" href="#home" style= "max-width:100%; color:white; height:80%"> <h5> Home</h5> </a> 
+            </div>  
+            <div style= "display:inline-block;width:15%;">
+                <a class="active" href="#about_us" style= "max-width:100%;color:white; height:80%"> <h5> About-Us</h5> </a>
+            </div> 
+            <div style= "display:inline-block;width:15%;"> 
+                <a class="active" href="#contact_us" style= "max-width:100%; color:white; height:80%"> <h5> Contact-Us</h5> </a>
+            </div>  
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn" style=" color:rgb(236, 236, 236);text-align:right;margin-top:20px; float: right;background-color:rgba(70,73,76,0.95);">Crops</button>
+                <div id="myDropdown" class="dropdown-content" style="overflow-y: scroll; height:300px;">
+                    {% for crop in crops %}
+                        <a href="/crops/{{crop['id']}}">{{crop["crop_name"]}}</a>
+                    {% endfor %}   
+                </div>
+            </div>
+        </div>
+
+        <!--extra pages/content-->
+        {% include "homepage_content.html" %}
+
+        <footer id="footer" style=" width:100%; height:auto; background-color:#0a1c22; " >
+        </footer>
+           
+        
+    </div>
+
+    <!-- <form action="/receive" method="post">
+        <input type="text" class="form-element" name="username" placeholder="Enter Username" />
+        <input type="password" class="form-element" name="password" placeholder="Enter Password" />
+        <input type="submit" class="form-element" name="submit" value="Send" />
+    </form> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+       
+    </script>
+    
+</body>
+</html>

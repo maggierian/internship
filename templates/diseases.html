@@ -1,0 +1,40 @@
+{% extends "crops_index.html" %}
+{% block content %}
+    <table id="myTable1" style=" margin:10px; max-width:98%; ">
+        <thead>
+            <tr style="border: 1px solid black; ">
+                <th style="border: 1px solid black; ">ID</th>
+                <th style="border: 1px solid black; ">diseases</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for disease in diseases %}
+                <tr style="border: 1px solid black;">
+                    <td style="border: 1px solid black;" data-toggle="modal" data-target="#exampleModalCenter_{{disease['id']}}">{{disease["id"]}} </td>
+                    <td style="border: 1px solid black;" data-toggle="modal" data-target="#exampleModalCenter_{{disease['id']}}">{{disease["diseases"]}} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% for pest in diseases %}
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter_{{pest['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Details for {{pest["diseases"]}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% include "signs.html" %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

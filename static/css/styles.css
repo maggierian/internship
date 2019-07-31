@@ -1,0 +1,61 @@
+
+a{
+  text-decoration-style: none;
+}
+.dropbtn {
+    background-color: rgb(2, 62, 2);
+    color: rgb(114, 236, 108);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: rgb(2, 62, 2);
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #868986;
+    width: 200px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: rgb(188, 189, 188);}
+  
+  .show {display: block;}
+
+  table, th, td {
+    border: 1px solid black;
+  }
+  th {
+    text-align: right;
+  }
+  a {
+    text-decoration-style: none;
+  }
+  .contact_us{
+    background-image: url("C:\Users\HP\Desktop\mg\flask-projects\tutorial\static\images");
+  }
+  .img{
+    margin-bottom: 50px;
+    display:inline-block; 
+    width:20%; 
+
+  }
